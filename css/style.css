@@ -1,6 +1,6 @@
 :root {
   /* Colors */
-  --clr-border: hsl(185, 75%, 39%);
+  --clr-body-bg: hsl(185, 75%, 39%);
   --clr-primary-900: hsl(229, 23%, 23%);
   --clr-secondary-600: hsl(227, 10%, 46%);
 
@@ -12,4 +12,120 @@
   /* Font weights */
   --fw-regular: 400;
   --fw-bold: 700;
+}
+
+body {
+  /* position: relative; */
+  background-color: var(--clr-body-bg);
+  color: var(--clr-primary-900);
+  font-family: var(--ff-kumbh-sans);
+  font-weight: var(--fw-regular);
+  font-size: 0.925rem;
+  height: 100vh;
+  position: relative;
+  text-align: center;
+  display: grid;
+  place-content: center;
+
+  background-image: url(https://digitshack.com/codepen/mentor4/bg-pattern-top.svg),
+    url(https://digitshack.com/codepen/mentor4/bg-pattern-bottom.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 48vw bottom 40vh, left 45vw top 44vh;
+}
+
+.bg-pattern {
+  position: absolute;
+  z-index: 1;
+}
+
+.bg-pattern-top {
+  top: -30%;
+  left: 2%;
+}
+
+.bg-pattern-bottom {
+  bottom: -35%;
+  right: 2%;
+}
+
+.profile-card {
+  background-color: #fff;
+  width: 350px;
+  z-index: 200;
+  margin: auto;
+  display: grid;
+  grid-template-rows: 6fr 7fr 5fr;
+
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.pattern-card-top {
+  background-image: url(/images/bg-pattern-card.svg);
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.user-info {
+  /* padding: 2rem; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* align-items: ; */
+  justify-content: end;
+
+  gap: 0.2rem;
+}
+
+.user-profile {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+
+.wrapper {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper > * {
+  font-size: 1.2rem;
+}
+
+.wrapper span,
+.user-residence {
+  color: var(--clr-secondary-600);
+}
+
+.user-residence {
+  margin-bottom: 1.5rem;
+}
+
+.user-activity {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  border-top: 1px solid hsla(227, 10%, 46%, 0.359);
+  padding: 1.5rem;
+}
+
+.user-activity li > span {
+  text-transform: uppercase;
+  color: var(--clr-secondary-600);
+
+  font-size: 0.6rem;
+}
+
+@media (max-width: 370px) {
+  .profile-card {
+    margin: 1rem;
+  }
 }
